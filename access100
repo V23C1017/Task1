@@ -1,15 +1,38 @@
-#!/bin/bash
+#!/usr/bin/env python3
 # SPDX-FileCopyrightText: 2026 YUkifumi Itohiya
 # SPDX-License-Identifier: BSD-3-Clause
 
-count="${1:-100}"
-target="${2:-/}"
+import os
+import sys
+from datetime import datetime
 
-echo "=== 最近アクセスされたファイル ==="
-find "$target" \
-    \( -path /proc -o -path /sys -o -path /dev -o -path /run -o -path /snap -o -path /mnt -o -path /usr -o -path /var -o -path /lib -o -path /lib64 -o -path /etc -o -path /boot -o -path /opt -o -path /tmp \) -prune -o \
-    -type f -not -path '*/.*' -printf '%A@ %TY-%Tm-%Td %TH:%TM:%TS  %p\n' 2>/dev/null \
-    | sort -nr \
-    | head -n "$count" \
-    | cut -d' ' -f2- \
-    | sed 's/\.[0-9]\{10\}//'
+count = int(sys.argv[1]) if len(sys.argv) > 1 else 100
+target = sys.argv[2] if len(sys.argv) > 2 else "/"
+
+exclude_dirs = {
+    "/proc", "/sys", "/dev", "/run", "/snap", "/mnt",
+    "/usr", "/var", "/lib", "/lib64", "/etc", "/boot", "/opt", "/tmp"
+}
+
+files = []
+for root, dirs, filenames in os.walk(target, topdown=True):
+    dirs[:] = [
+        d for d in dirs
+        if not d.startswith(".") and os.path.join(root, d) not in exclude_dirs
+    ]
+    for f in filenames:
+        if f.startswith("."):
+            continue
+        filepath = os.path.join(root, f)
+        try:
+            atime = os.stat(filepath).st_atime
+            files.append((atime, filepath))
+        except OSError:
+            pass
+
+files.sort(key=lambda x: x[0], reverse=True)
+
+print("=== 最近アクセスされたファイル ===")
+for atime, filepath in files[:count]:
+    dt = datetime.fromtimestamp(atime).strftime("%Y-%m-%d %H:%M:%S")
+    print(f"{dt}  {filepath}")
