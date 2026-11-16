@@ -23,13 +23,14 @@ Ubuntu 24.04 LTS
 
 ### インストール方法
 
-以下のコマンドを実行してリポジトリをクローンし、実行権限を付与してパスの通ったディレクトリに配置します。
+以下のコマンドを実行してリポジトリをクローンし、実行権限を付与しします。
 
 ```bash
-$ git clone [https://github.com/V23C1017/Task1.git](https://github.com/V23C1017/Task1.git)
+$ git clone git@github.com:V23C1017/Task1.git
 $ cd Task1
 $chmod +x access100
 ```
+こちらで使用可能になります
 
 
 ## 使用方法
