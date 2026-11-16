@@ -6,7 +6,7 @@
 
 ![test](https://github.com/V23C1017/Task1/actions/workflows/test.yml/badge.svg)
 
-指定したディレクトリ配下で最近アクセスされたファイルを、最終アクセス日時が新しい順に一覧表示するコマンドです。
+ディレクトリ配下で最近アクセスされたファイルを、最終アクセス日時が新しい順に一覧表示するコマンドです。
 
 ## 必要なソフトウェア
 
@@ -31,6 +31,7 @@ $ cd Task1
 $chmod +x access100
 ```
 ##使用方法
+
 以下のコマンドで実行でき、最近アクセスされたファイルを最大100件表示します。
 ```bash
 ./access100
@@ -43,4 +44,4 @@ $chmod +x access100
 このパッケージは、aaa由来のコード（© 2025 Hoge Fuge）を利用しています。
 
 
-© 2026 YUKIFUMI ITOHIYA# Task1
+© 2026 YUKIFUMI ITOHIYA
