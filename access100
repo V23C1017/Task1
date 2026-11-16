@@ -3,7 +3,7 @@
 count="${1:-100}"
 target="${2:-.}"
 
-echo "=== 最近アクセスされたファイル Top ${count} (対象: ${target}) ==="
+echo "=== 最近アクセスされたファイル ==="
 find "$target" -type f -not -path '*/.*' -printf '%A@ %TY-%Tm-%Td %TH:%TM:%TS  %p\n' 2>/dev/null \
     | sort -nr \
     | head -n "$count" \
