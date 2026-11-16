@@ -29,7 +29,6 @@ Ubuntu 24.04 LTS
 $ git clone [https://github.com/V23C1017/Task1.git](https://github.com/V23C1017/Task1.git)
 $ cd Task1
 $chmod +x access100
-$ sudo cp access100 /usr/local/bin/
 ```
 
 ## ライセンス
