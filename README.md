@@ -6,7 +6,7 @@
 
 # plusコマンド
 
-![test](https://github.com/V23C1017/Task1/actions/workflows/test.yml/bad>
+[test](https://github.com/V23C1017/Task1/actions/workflows/test.yml/bad>
 
 
 
