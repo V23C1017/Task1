@@ -8,15 +8,6 @@
 
 指定したディレクトリ配下で最近アクセスされたファイルを、最終アクセス日時が新しい順に一覧表示するコマンドです。
 
-### インストール方法
-
-以下のコマンドを実行してリポジトリをクローンし、実行権限を付与してパスの通ったディレクトリに配置します。
-
-```bash
-$ git clone [https://github.com/V23C1017/Task1.git](https://github.com/V23C1017/Task1.git)
-$ cd Task1
-$chmod +x access100$ sudo cp access100 /usr/local/bin/
-
 ## 必要なソフトウェア
 
 Python
@@ -29,6 +20,17 @@ Python
 Ubuntu 24.04 LTS
 
 
+
+### インストール方法
+
+以下のコマンドを実行してリポジトリをクローンし、実行権限を付与してパスの通ったディレクトリに配置します。
+
+```bash
+$ git clone [https://github.com/V23C1017/Task1.git](https://github.com/V23C1017/Task1.git)
+$ cd Task1
+$chmod +x access100$ sudo cp access100 /usr/local/bin/
+```
+
 ## ライセンス
 
 このソフトウェアパッケージは、3条項BSDライセンスの下、再頒布および使用>
@@ -39,6 +41,3 @@ Ubuntu 24.04 LTS
     - https://github.com/tarolab-cit/lectures/tree/main/robosys2026
 
 © 2026 YUKIFUMI ITOHIYA# Task1
-
-
-現在のコード 
