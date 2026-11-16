@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+count="${1:-100}"
+target="${2:-.}"
+
+echo "=== 最近アクセスされたファイル Top ${count} (対象: ${target}) ==="
+find "$target" -type f -printf '%A@ %TY-%Tm-%Td %TH:%TM:%TS  %p\n' 2>/dev/null \
+    | sort -nr \
+    | head -n "$count" \
+    | cut -d' ' -f2- \
+    | sed 's/\.[0-9]\{10\}//'
