@@ -5,7 +5,7 @@ target="${2:-/}"
 
 echo "=== 最近アクセスされたファイル ==="
 find "$target" \
-    \( -path /proc -o -path /sys -o -path /dev -o -path /run -o -path /snap -o -path /mnt \) -prune -o \
+    \( -path /proc -o -path /sys -o -path /dev -o -path /run -o -path /snap -o -path /mnt -o -path /usr -o -path /var -o -path /lib -o -path /lib64 -o -path /etc -o -path /boot -o -path /opt -o -path /tmp \) -prune -o \
     -type f -not -path '*/.*' -printf '%A@ %TY-%Tm-%Td %TH:%TM:%TS  %p\n' 2>/dev/null \
     | sort -nr \
     | head -n "$count" \
